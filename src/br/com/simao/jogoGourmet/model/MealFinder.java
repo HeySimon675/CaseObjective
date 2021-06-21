@@ -1,43 +1,62 @@
 package br.com.simao.jogoGourmet.model;
 import br.com.simao.jogoGourmet.view.AskMealMessage;
+import br.com.simao.jogoGourmet.view.CreateMealMessage;
+import br.com.simao.jogoGourmet.view.WinMessage;
 
 public class MealFinder {
 
-    private Meal firstMeal;
+    private final MealBinaryTree meals;
     private Meal actualMeal;
-    private String message;
-    private Boolean isFinded = false;
+    private Boolean isFinded;
+    private Boolean isEnded;
 
     public MealFinder() {
-        createDefaultMeals();
+        meals = new MealBinaryTree();
+
     }
 
     public void execute() {
-        while(!isFinded) {
+        initialize();
+
+        while(!isEnded) {
             findMeal();
         }
+
+        if(isFinded){
+            new WinMessage();
+        }
+    }
+
+    private void initialize() {
+        actualMeal = meals.getFirstMeal();
+        isFinded = false;
+        isEnded = false;
     }
 
     private void findMeal() {
-        isFinded = AskMealMessage.ask(firstMeal.getValue());
+        Boolean answeredYes = AskMealMessage.ask(actualMeal.getValue());
 
-        if(!isFinded) {
+        if (actualMeal.isMealLeaf()) {
 
+            if (answeredYes) {
+                isEnded = true;
+                isFinded = true;
+            } else {
+                mealDoestExist();
+            }
+        } else if (answeredYes) {
+            actualMeal = actualMeal.getLeft();
+        } else {
+            actualMeal = actualMeal.getRight();
         }
     }
 
-    private void createDefaultMeals() {
-        firstMeal = new Meal("Massa");
-        firstMeal.setLeft(new Meal("Lasanha") );
-        firstMeal.setRight( new Meal("Bolo de chocolate") );
-        actualMeal = firstMeal;
+    private void mealDoestExist() {
+        String newMeal = CreateMealMessage.askForMeal();
+        String difference = CreateMealMessage.askForDifference(newMeal, actualMeal.getValue());
+
+        meals.addMeal(actualMeal, difference, newMeal);
+        isEnded = true;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }

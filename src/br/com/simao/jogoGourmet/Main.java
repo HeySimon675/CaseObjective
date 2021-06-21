@@ -20,11 +20,11 @@ public class Main extends JFrame {
     private void showInitialMessage() {
         MealFinder mealFinder = new MealFinder();
 
-        JPanel initialMessage = new JPanel();
-        initialMessage.add(new JLabel("Pense em um prato que gosta"));
-        initialMessage.add(new StartButtom(mealFinder));
+        JPanel initialPanel = new JPanel();
+        initialPanel.add(new JLabel("Pense em um prato que gosta"));
+        initialPanel.add(new StartButtom(mealFinder));
 
-        this.add(initialMessage);
+        this.add(initialPanel);
     }
 
     private void configureGame() {

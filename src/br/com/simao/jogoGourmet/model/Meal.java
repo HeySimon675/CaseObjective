@@ -12,6 +12,10 @@ public class Meal {
         this.left = null;
     }
 
+    public Boolean isMealLeaf() {
+        return (this.left == null);
+    }
+
     public Meal getLeft() {
         return left;
     }
