@@ -1,4 +1,4 @@
-package br.com.simao.jogoGourmet.view;
+package main.br.com.simao.jogoGourmet.view;
 
 import javax.swing.*;
 

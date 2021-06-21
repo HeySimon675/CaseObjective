@@ -1,6 +1,6 @@
-package br.com.simao.jogoGourmet.view;
+package main.br.com.simao.jogoGourmet.view;
 
-import br.com.simao.jogoGourmet.model.MealFinder;
+import main.br.com.simao.jogoGourmet.model.MealFinder;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;

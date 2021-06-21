@@ -1,4 +1,4 @@
-package br.com.simao.jogoGourmet.model;
+package main.br.com.simao.jogoGourmet.model;
 
 public class MealBinaryTree {
 
