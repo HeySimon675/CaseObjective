@@ -1,7 +1,7 @@
-package main.br.com.simao.jogoGourmet;
+package br.com.simao.jogoGourmet;
 
-import main.br.com.simao.jogoGourmet.model.MealFinder;
-import main.br.com.simao.jogoGourmet.view.StartButtom;
+import br.com.simao.jogoGourmet.model.MealFinder;
+import br.com.simao.jogoGourmet.view.StartButtom;
 
 import javax.swing.*;
 import java.awt.*;

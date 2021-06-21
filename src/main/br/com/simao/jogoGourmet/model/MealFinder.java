@@ -1,7 +1,7 @@
-package main.br.com.simao.jogoGourmet.model;
-import main.br.com.simao.jogoGourmet.view.AskMealMessage;
-import main.br.com.simao.jogoGourmet.view.CreateMealMessage;
-import main.br.com.simao.jogoGourmet.view.WinMessage;
+package br.com.simao.jogoGourmet.model;
+import br.com.simao.jogoGourmet.view.AskMealMessage;
+import br.com.simao.jogoGourmet.view.CreateMealMessage;
+import br.com.simao.jogoGourmet.view.WinMessage;
 
 public class MealFinder {
 

@@ -1,4 +1,4 @@
-package main.br.com.simao.jogoGourmet.model;
+package br.com.simao.jogoGourmet.model;
 
 public class Meal {
 
