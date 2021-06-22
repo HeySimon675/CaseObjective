@@ -1,5 +1,8 @@
 package br.com.simao.jogoGourmet.model;
 
+/**
+ * @author: simão
+ */
 public class MealBinaryTree {
 
     private Meal firstMeal;

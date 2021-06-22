@@ -3,6 +3,9 @@ import br.com.simao.jogoGourmet.view.AskMealMessage;
 import br.com.simao.jogoGourmet.view.CreateMealMessage;
 import br.com.simao.jogoGourmet.view.WinMessage;
 
+/**
+ * @author: simão
+ */
 public class MealFinder {
 
     private final MealBinaryTree meals;
@@ -34,7 +37,7 @@ public class MealFinder {
     }
 
     private void findMeal() {
-        Boolean answeredYes = AskMealMessage.ask(actualMeal.getValue());
+        Boolean answeredYes = askForMeal(actualMeal.getValue());
 
         if (actualMeal.isMealLeaf()) {
 
@@ -52,11 +55,30 @@ public class MealFinder {
     }
 
     private void mealDoestExist() {
-        String newMeal = CreateMealMessage.askForMeal();
-        String difference = CreateMealMessage.askForDifference(newMeal, actualMeal.getValue());
+        String newMeal = askForNewMeal();
+        String difference = askForDifference(newMeal, actualMeal.getValue());
 
         meals.addMeal(actualMeal, difference, newMeal);
         isEnded = true;
     }
 
+    public Boolean isGameWon() {
+        return (isEnded && isFinded);
+    }
+
+    public Boolean askForMeal(String mealName) {
+        return new AskMealMessage().ask(mealName);
+    }
+
+    public String askForNewMeal() {
+        return new CreateMealMessage().askForMeal();
+    }
+
+    public String askForDifference(String newMealName, String actualMealName) {
+        return new CreateMealMessage().askForDifference(newMealName, actualMealName);
+    }
+
+    public final Meal getActualMeal() {
+        return actualMeal;
+    }
 }

@@ -6,6 +6,9 @@ import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * @author: simão
+ */
 public class StartButtom extends JButton implements MouseListener {
 
     private MealFinder mealFinder;

@@ -1,5 +1,8 @@
 package br.com.simao.jogoGourmet.model;
 
+/**
+ * @author: simão
+ */
 public class Meal {
 
     private Meal left;

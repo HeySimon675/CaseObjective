@@ -6,6 +6,9 @@ import br.com.simao.jogoGourmet.view.StartButtom;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author: simão
+ */
 public class Main extends JFrame {
 
     private static final String GAME_TITLE = "Jogo Gourmet";
